@@ -19,9 +19,6 @@ export class ChatApiService {
       max_tokens: 256,
     };
     
-    console.log(requestBody);
-    console.log(`Bearer ${this.apiKey}`);
-
     return this.http.post<any>(this.apiUrl, requestBody, {
       headers: {
         'Content-Type': 'application/json',
