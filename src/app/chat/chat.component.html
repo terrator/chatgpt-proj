@@ -1,6 +1,10 @@
-<input [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type your message..." />
-
 <div class="chat-container">
-    <div *ngFor="let message of messages">{{ message }}</div>
+    <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Enter a question and press Enter..." />
+    <ng-container *ngIf="messages.length!=0">
+        <h3 class="chat-msg-title">Messages</h3>
+        <div class="chat-message" *ngFor="let message of messages">
+            <div class="chat-prompt" >{{ message.prompt }}</div>
+            <div class="chat-answer">{{ message.answer }}</div>
+        </div>    
+    </ng-container>
 </div>
-  

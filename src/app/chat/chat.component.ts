@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ChatApiService } from '../chat-api.service';
+import { Message } from '../models/types';
 
 @Component({
   selector: 'app-chat',
@@ -8,26 +8,29 @@ import { ChatApiService } from '../chat-api.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  messages: string[] = []
+  messages: Message[] = []
   userMessage!: string;
 
   constructor(private chatApiService: ChatApiService) { }
 
   sendMessage() {
-    this.messages.push(this.userMessage);
+    // this.messages.push(this.userMessage);
 
     // Send user message to ChatGPT
-    this.chatApiService.sendUserMessage(this.messages.join('\n')).subscribe(
+    this.chatApiService.sendUserMessage(this.userMessage).subscribe(
       (response) => {
         const chatResponse = response.choices[0].text.trim();
-        this.messages.push(chatResponse);
+        
+        this.messages.push({ 
+          prompt: this.userMessage,
+          answer: chatResponse
+        });
+        this.userMessage = ''; // Clear user input
       },
       (error) => {
         console.error('Error sending user message:', error);
       }
-    );
-
-    this.userMessage = ''; // Clear user input
+    );  
   }
 
   ngOnInit(): void {
