@@ -11,6 +11,11 @@
     margin-bottom: 20px;
 }
 
+.empty-message {
+    margin-left: 20px;
+    align-items: center;
+}
+
 .chat-prompt {
     font-weight: 400;
 }
@@ -36,4 +41,12 @@ input {
     color-scheme: light;
     border-radius: 10px;
     border-color: darkgray;
+    border-width: 1px;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+}
+
+input:focus {
+    outline-color: black;
+    outline-width: 1px;
+    outline-style:solid
 }

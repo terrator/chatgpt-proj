@@ -1,5 +1,6 @@
 <div class="chat-container">
-    <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Enter a question and press Enter..." />
+    <input type="text" required [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type a question and press Enter..." />
+    <span class="empty-message" *ngIf="emptyMessage">Question cannot be blank</span>
     <ng-container *ngIf="messages.length!=0">
         <h3 class="chat-msg-title">Messages</h3>
         <div class="chat-message" *ngFor="let message of messages">
