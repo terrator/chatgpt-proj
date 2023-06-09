@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatApiService } from '../chat-api.service';
+import { ChatApiService } from '../services/chat-api.service';
 import { Message } from '../models/types';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-chat',
@@ -12,7 +13,9 @@ export class ChatComponent implements OnInit {
   userMessage: string ='';
   emptyMessage: boolean = false;
 
-  constructor(private chatApiService: ChatApiService) { }
+  constructor(private chatApiService: ChatApiService, private translationService: TranslationService) {
+    this.translationService.init();
+   }
 
   sendMessage() {
     if (this.userMessage.trim().length == 0) { 
@@ -31,7 +34,6 @@ export class ChatComponent implements OnInit {
                       prompt: this.userMessage,
                       answer: chatResponse
                     });
-          // this.userMessage = '';
         }, 
       error: (error) => console.error('Error sending user message:', error),
       complete: () => this.userMessage = ''

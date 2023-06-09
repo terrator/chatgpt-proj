@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslationService } from './services/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chatgtp-proj';
+
+  constructor(private translationService: TranslationService) {}
+
+  ngOnInit() {
+    this.translationService.init();
+  }
+
+  onLanguageChange(lang: string) {
+    this.translationService.setLanguage(lang);
+  }
+    
 }

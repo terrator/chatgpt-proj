@@ -1,8 +1,8 @@
 <div class="chat-container">
-    <input type="text" required [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type a question and press Enter..." />
-    <span class="empty-message" *ngIf="emptyMessage">Question cannot be blank</span>
+    <input type="text" required [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="{{ 'placeholder' | translate }}"/>
+    <span class="empty-message" *ngIf="emptyMessage">{{ 'blank-question' | translate }}</span>
     <ng-container *ngIf="messages.length!=0">
-        <h3 class="chat-msg-title">Messages</h3>
+        <h3 class="chat-msg-title">{{ 'question-title' | translate }}</h3>
         <div class="chat-message" *ngFor="let message of messages">
             <div class="chat-prompt" >{{ message.prompt }}</div>
             <div class="chat-answer">{{ message.answer }}</div>

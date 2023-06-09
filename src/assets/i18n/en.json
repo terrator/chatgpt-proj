@@ -1,0 +1,9 @@
+{
+    "title": "ChatGPT Demo in Angular",
+    "placeholder": "Type a question and press Enter...",
+    "english": "English",
+    "french": "French",
+    "spanish": "Spanish",
+    "blank-question": "Question cannot be blank",
+    "question-title": "Questions"
+}
