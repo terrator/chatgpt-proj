@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class TranslationService {
+  private lang: string = 'en';
 
   constructor(private translate: TranslateService) { }
 
@@ -21,6 +22,7 @@ export class TranslationService {
 
   setLanguage(lang: string) {
     this.translate.use(lang);
+    this.lang = lang
   }
   
   translateKey(key: string): string {
@@ -29,5 +31,9 @@ export class TranslationService {
       translation = value;
     });
     return translation;
+  }
+
+  getLanguage(): string {
+    return this.lang;
   }
 }

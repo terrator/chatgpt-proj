@@ -47,3 +47,6 @@ Thumbs.db
 
 # OPENAI-API
 src/environments/openai-api.ts
+
+# AWS TRANSLATE SERVICE
+src/environments/aws-translate.ts
