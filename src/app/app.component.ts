@@ -8,6 +8,8 @@ import { TranslationService } from './services/translation.service';
 })
 export class AppComponent {
   title = 'chatgtp-proj';
+  currentLang: string = 'en'
+  selectedLang: string = 'en'
 
   constructor(private translationService: TranslationService) {}
 
@@ -17,6 +19,6 @@ export class AppComponent {
 
   onLanguageChange(lang: string) {
     this.translationService.setLanguage(lang);
+    this.currentLang = lang;
   }
-    
 }

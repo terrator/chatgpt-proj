@@ -36,11 +36,8 @@ export class AwsTranslateService {
     try {
       const data = await this.translator.send(translateCommand);
       translatedText = data.TranslatedText || '';
-      console.log("Original text: " + text);
-      console.log("Translation: " + translatedText);
-    } catch(err) {
-      console.log('Error -->');
-      console.log(err)
+    } catch(err: any) {
+      console.log('Error in ASW translate service: ' + err);
     }
     return translatedText;
   }
