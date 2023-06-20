@@ -1,9 +1,7 @@
 <mat-toolbar color="primary">
   <span>{{ 'title' | translate  }}</span>
   <select [(ngModel)]="selectedLang" (change)="chat.translateMsgs(currentLang, selectedLang); onLanguageChange(selectedLang)">
-    <option value="en">{{ 'english' | translate }}</option>
-    <option value="fr">{{ 'french' | translate }}</option>
-    <option value="es">{{ 'spanish' | translate }}</option>
+    <option *ngFor="let lang of languages$ | async" [ngValue]="lang.key">{{ lang.name | translate }}</option>
   </select>
 </mat-toolbar>
 <app-chat #chat></app-chat>

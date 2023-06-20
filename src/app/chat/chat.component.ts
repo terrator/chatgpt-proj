@@ -58,7 +58,7 @@ export class ChatComponent implements OnInit {
   };
 
   translateMsgs(srcLang: string, targetLang: string) {
-    if ( srcLang == targetLang ) return;
+    if ( srcLang == targetLang || this.messages.length == 0) return;
 
     (async () => {
       this.showMsgs = false
