@@ -1,8 +1,8 @@
 {
-    "title": "Demostración de ChatGPT en Angular",
+    "title": "ChtGPT - Demostración",
     "placeholder": "Escribe una pregunta y presiona Enter...",
-    "english": "Ingles",
-    "french": "Frances",
+    "english": "Inglés",
+    "french": "Francés",
     "spanish": "Español",
     "blank-question": "La pregunta no puede estar en blanco",
     "question-title": "Preguntas"
