@@ -1,7 +1,7 @@
-# Chat GTP Project Demo
+# Chat GPT Project Demo
 
-Demo to integrate ChatGTP into an Angular Application.
-It uses AWS translate service for which you need to obtain AWS IAM credentials. You also need a ChatGTP OpenAI key.
+Demo to integrate ChatGPT into an Angular Application.
+It uses AWS translate service for which you need to obtain AWS IAM credentials. You also need a ChatGPT OpenAI key.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
