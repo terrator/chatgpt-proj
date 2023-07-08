@@ -1,13 +1,33 @@
-.mat-toolbar {
+.container {
+    height: 100%; 
+    display: grid; 
+    grid-template-rows: auto 1fr;
+}
+
+.div-body {
+    overflow-y: auto;
+}
+
+._header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    top: 0;
 }
 
 select {
-    margin-right: 20px;
-    min-width: 120px;
     border-top: none;
     height: 24px;
     font-family: Roboto, sans-serif;
+}
+
+._footer {
+    position: fixed; 
+    bottom: 0;
+    text-align: center;
+}
+
+._footer-title {
+    margin: 0 auto;
+    white-space: normal;
 }

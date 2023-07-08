@@ -1,8 +1,15 @@
-<mat-toolbar color="primary">
-  <span>{{ 'title' | translate  }}</span>
-  <select [(ngModel)]="selectedLang" (change)="chat.translateMsgs(currentLang, selectedLang); onLanguageChange(selectedLang)">
-    <option *ngFor="let lang of languages$ | async" [ngValue]="lang.key">{{ lang.name | translate }}</option>
-  </select>
-</mat-toolbar>
-<app-chat #chat></app-chat>
-<router-outlet></router-outlet>
+<div class="container">
+  <mat-toolbar class="_header"  color="primary">
+    <span>{{ 'title' | translate  }}</span>
+    <select [(ngModel)]="selectedLang" (change)="chat.translateMsgs(currentLang, selectedLang); onLanguageChange(selectedLang)">
+      <option *ngFor="let lang of languages$ | async" [ngValue]="lang.key">{{ lang.name | translate }}</option>
+    </select>
+  </mat-toolbar>
+  <div class="div-body">
+    <app-chat #chat></app-chat>
+    <router-outlet></router-outlet>  
+  </div>
+  <mat-toolbar class="_footer" color="primary">
+    <span class="_footer-title">&copy; J. Terrazas</span>
+  </mat-toolbar>
+</div>
