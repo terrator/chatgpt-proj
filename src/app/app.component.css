@@ -9,16 +9,15 @@
 }
 
 ._header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     top: 0;
 }
 
-select {
-    border-top: none;
-    height: 24px;
-    font-family: Roboto, sans-serif;
+._header-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-mdc-menu-item.mdc-list-item {
+    justify-content: flex-end;
 }
 
 ._footer {
