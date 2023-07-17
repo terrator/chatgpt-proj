@@ -50,6 +50,8 @@ src/environments/openai-api.ts
 
 # AWS TRANSLATE SERVICE
 src/environments/aws-translate.ts
-.firebase/hosting.ZGlzdC9jaGF0Z3RwLXByb2o.cache
+
+# firebase
+.firebase
 .firebaserc
 firebase.json

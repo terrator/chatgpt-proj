@@ -1,5 +1,5 @@
 <div class="chat-container">
-    <input type="text" required [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="{{ 'placeholder' | translate }}"/>
+    <input type="text" required [(ngModel)]="userMessage"  (keydown.enter)="sendMessage()" placeholder="{{ 'placeholder' | translate }}"/>
     <span class="empty-message" *ngIf="emptyMessage">{{ 'blank-question' | translate }}</span>
     <ng-container *ngIf="showLoading">
         <div class="loader"></div>

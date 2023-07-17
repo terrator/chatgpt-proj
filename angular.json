@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "chatgtp-proj": {
+    "chatgpt-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/chatgtp-proj",
+            "outputPath": "dist/chatgpt-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "chatgtp-proj:build:production"
+              "browserTarget": "chatgpt-demo:build:production"
             },
             "development": {
-              "browserTarget": "chatgtp-proj:build:development"
+              "browserTarget": "chatgpt-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "chatgtp-proj:build"
+            "browserTarget": "chatgpt-demo:build"
           }
         },
         "test": {

@@ -9,7 +9,7 @@ import { of } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'chatgtp-proj';
+  title = 'chatgpt-demo';
   currentLang: string = 'en'
   selectedLang: string = 'en'
   languages = languages
