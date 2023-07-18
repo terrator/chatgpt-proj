@@ -55,3 +55,6 @@ src/environments/aws-translate.ts
 .firebase
 .firebaserc
 firebase.json
+
+# capacitor
+/ios/
