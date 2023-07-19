@@ -1,11 +1,16 @@
 <div class="chat-container">
-    <input type="text" required [(ngModel)]="userMessage" (blur)="sendMessage()" (keydown.enter)="sendMessage()" placeholder="{{ 'placeholder' | translate }}"/>
+    <div class="input-area">
+        <input type="text" required [(ngModel)]="userMessage" placeholder="{{ 'placeholder' | translate }}"/>
+        <button class="enter-button" mat-mini-fab color="primary" [disabled]="userMessage.length <= 0" (click)="sendMessage()">
+            <mat-icon>send</mat-icon>
+        </button>
+    </div>
     <span class="empty-message" *ngIf="emptyMessage">{{ 'blank-question' | translate }}</span>
     <ng-container *ngIf="showLoading">
-        <div class="loader"></div>
+        <div class="spinner"><mat-spinner color="primary"></mat-spinner></div>
     </ng-container>
     <ng-container *ngIf="showMsgs">
-        <h3 class="chat-msg-title">{{ 'question-title' | translate }}</h3>
+        <h3>{{ 'question-title' | translate }}</h3>
         <div class="chat-message" *ngFor="let message of messages">
             <div class="chat-prompt" >{{ message.prompt }}</div>
             <div class="chat-answer">{{ message.answer }}</div>
