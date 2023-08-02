@@ -5,5 +5,7 @@
     "french": "French",
     "spanish": "Spanish",
     "blank-question": "Question cannot be blank",
-    "question-title": "Questions"
+    "question-title": "Questions",
+    "me": "Me",
+    "wait": "Sending message to chatbot. Please wait"
 }

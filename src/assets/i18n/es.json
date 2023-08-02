@@ -5,5 +5,7 @@
     "french": "Francés",
     "spanish": "Español",
     "blank-question": "La pregunta no puede estar en blanco",
-    "question-title": "Preguntas"
+    "question-title": "Preguntas",
+    "me": "Yo",
+    "wait": "Enviando mensaje al chatbot. Espere por favor"
 }

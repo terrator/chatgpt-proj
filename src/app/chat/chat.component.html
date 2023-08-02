@@ -7,13 +7,12 @@
     </div>
     <span class="empty-message" *ngIf="emptyMessage">{{ 'blank-question' | translate }}</span>
     <ng-container *ngIf="showLoading">
-        <div class="spinner"><mat-spinner color="primary"></mat-spinner></div>
+        <div class="spinner">{{ 'wait' | translate }}...</div>
     </ng-container>
     <ng-container *ngIf="showMsgs">
-        <h3>{{ 'question-title' | translate }}</h3>
-        <div class="chat-message" *ngFor="let message of messages">
-            <div class="chat-prompt" >{{ message.prompt }}</div>
-            <div class="chat-answer">{{ message.answer }}</div>
-        </div>    
+        <ng-container class="chat-message" *ngFor="let message of messages">
+            <p *ngIf="message.role == 'user'" class="chat-prompt" ><b>{{ 'me' | translate }}: </b>{{ message.content }}</p>
+            <p *ngIf="message.role == 'assistant'" class="chat-answer"><b>Chatbot: </b>{{ message.content }}</p>
+        </ng-container>
     </ng-container>
 </div>

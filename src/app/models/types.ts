@@ -1,4 +1,4 @@
 export interface Message {
-    prompt: string,
-    answer?: string
+    role: string,
+    content: string
 }

@@ -12,16 +12,20 @@
 }
 
 .empty-message {
-    margin-left: 20px;
-    align-items: center;
+    display: flex;
+    font-style: italic;
+    flex-direction: row;
+    justify-content: center
 }
 
 .chat-prompt {
     font-weight: 400;
+    color: green
 }
 
 .chat-answer {
-    font-weight: 200;
+    font-weight: 400;
+    font-style: italic
 }
 
 input {
@@ -38,7 +42,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: auto;
+    margin: 10px;
 }
 
 .input-area {
