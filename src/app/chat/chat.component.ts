@@ -102,5 +102,9 @@ export class ChatComponent implements OnInit {
     })();
   }
 
+  reset() {
+    this.messages = []
+  }
+
   ngOnInit(): void {}
 }

@@ -1,7 +1,7 @@
 <div class="chat-container">
     <div class="input-area">
         <input type="text" required [(ngModel)]="userMessage" placeholder="{{ 'placeholder' | translate }}"/>
-        <button class="enter-button" mat-mini-fab color="primary" [disabled]="userMessage.length <= 0" (click)="sendMessage()">
+        <button class="enter-button" mat-mini-fab color="primary" [disabled]="userMessage.length <= 0" (click)="sendMessage()" matTooltip="{{ 'send' | translate }}">
             <mat-icon>send</mat-icon>
         </button>
     </div>

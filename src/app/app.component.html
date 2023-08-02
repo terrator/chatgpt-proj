@@ -1,12 +1,21 @@
 <div class="container">
   <mat-toolbar class="_header" color="primary">
-    <span>{{ 'title' | translate }}</span>
+    <span>{{ "title" | translate }}</span>
     <span class="_header-spacer"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+    <button mat-icon-button (click)="chat.reset()" matTooltip="{{ 'reset' | translate }}">
+      <mat-icon>autorenew</mat-icon>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="{{ 'language' | translate }}">
       <mat-icon>language</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item *ngFor="let lang of languages" (click)="chat.translateMsgs(currentLang, lang.key); onLanguageChange(lang.key)">
+      <button
+        mat-menu-item
+        *ngFor="let lang of languages"
+        (click)="
+          chat.translateMsgs(currentLang, lang.key); onLanguageChange(lang.key)
+        " 
+      >
         <mat-icon *ngIf="selectedLang == lang.key">check_circle</mat-icon>
         <span>{{ lang.name | translate }}</span>
       </button>
