@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { openai } from 'src/environments/openai-api';
+import { Message } from '../models/types';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,10 @@ export class ChatApiService {
 
   constructor(private http: HttpClient) { }
 
-  sendUserMessage(prompt: string): Observable<any> {
+  sendUserMessage(messages: Message[]): Observable<any> {
     const requestBody = {
-      prompt: prompt,
-      model: "text-davinci-003",
+      messages: messages,
+      model: "gpt-3.5-turbo",
       max_tokens: 256,
     };
     

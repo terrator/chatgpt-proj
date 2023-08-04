@@ -53,9 +53,10 @@ export class ChatComponent implements OnInit {
       });
 
       // need to send all message to api
-      this.chatApiService.sendUserMessage(translatedMsg).subscribe({
+      this.chatApiService.sendUserMessage(this.messages).subscribe({
         next: (response) => {
-          const chatResponse = response.choices[0].text.trim();
+          console.log('response', response)
+          const chatResponse = response.choices[0].message.content.trim();
           (async () => {
             let translatedTxt =
               originalLang == 'en'
